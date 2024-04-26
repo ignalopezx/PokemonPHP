@@ -9,8 +9,6 @@
 <body>
     <?php
         include("header.php");
-    ?>
-    <?php
         include("search-bar.php");
     ?>
     <div class="resultados">
@@ -20,7 +18,6 @@
             
             mostrar_pokemons($_GET['buscar']);
         } else {
-
             mostrar_pokemons();
         }
         ?>

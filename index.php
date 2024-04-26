@@ -11,7 +11,6 @@
         include("header.php");
         include("search-bar.php");
     ?>
-
     <div class="resultados">
         <?php
         include "mostrar_tablas.php";
