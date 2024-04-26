@@ -1,15 +1,33 @@
 <?php
+
 function mostrar_pokemons($busqueda = "") {
-    $conexion = new mysqli("localhost", "root", "", "pokemons");
+    $database = "pokemons";
+    $pass = "";
+    $user = "root";
+    $conexion = new mysqli("localhost", $user, $pass, $database);
+
     if ($conexion->connect_error) {
         die("Error de conexión con la base de dátos: " . $conexion->connect_error);
     }
     $consulta = "SELECT * FROM pokemon";
-    if (!empty($busqueda)) {
+
+    if ($busqueda != "") {
         $consulta .= " WHERE nombre LIKE '%$busqueda%'";
     }
     $resultado = $conexion->query($consulta);
+
     if ($resultado->num_rows > 0) {
+        crearTabla($resultado);
+    } else {
+        echo "<p style='font-size: 35px; font-weight: bold; text-align: center;'>Pokémon no encontrado</p>";
+        $sql_todos = "SELECT * FROM pokemon";
+        $resultado_todos = $conexion->query($sql_todos);
+        crearTabla($resultado_todos);
+    }
+    $conexion->close();
+}
+
+function crearTabla($resultado_busqueda) {
         echo "<table>";
         echo "<tr>";
         echo "<th>Imagen</th>";
@@ -17,40 +35,22 @@ function mostrar_pokemons($busqueda = "") {
         echo "<th>Tipo 2</th>";
         echo "<th>Número Identificador</th>";
         echo "<th>Nombre</th>";
-        echo "</tr>";
-        while ($fila = $resultado->fetch_assoc()) {
+        echo "</tr>";        
+        while ($fila = mysqli_fetch_assoc($resultado_busqueda)) {
             echo "<tr>";
             echo "<td><img src='{$fila['imagen']}' alt='{$fila['nombre']}' width='100px' height='100px'></td>";
             echo "<td><img src='tipoPokemon/tipo_{$fila['tipo1']}.png' alt='{$fila['tipo1']}'</td>";
-            echo "<td><img src='tipoPokemon/tipo_{$fila['tipo2']}.png' alt=''</td>"; // Esta columna aparece en blanco si el pokemon no tieene tipo 2
+            if ($fila["tipo2"] != null) {
+                echo "<td><img src='tipoPokemon/tipo_{$fila['tipo2']}.png' alt=''</td>";
+            } else {
+                echo "<td></td>";
+            }
             echo "<td>{$fila['numero_identificador']}</td>";
             echo "<td>{$fila['nombre']}</td>";
             echo "</tr>";
         }
         echo "</table>";
-    } else {
-        echo "<p style='font-size: 35px; font-weight: bold; text-align: center;'>Pokémon no encontrado</p>";
-        $sql_todos = "SELECT * FROM pokemon";
-        $resultado_todos = mysqli_query($conexion, $sql_todos);
-        if (!$resultado_todos) {
-            die("Error al ejecutar la consulta: " . mysqli_error($conexion));
-        }
-        echo "<table>";
-        echo "<tr><th>Imagen</th><th>Tipo 1</th><th>Tipo 2</th><th>Número Identificador</th><th>Nombre</th></tr>";
-        while ($fila = mysqli_fetch_assoc($resultado_todos)) {
-            echo "<tr>";
-            echo "<td><img src='{$fila['imagen']}' alt='{$fila['nombre']}' width='100px' height='100px'></td>";
-            echo "<td><img src='tipoPokemon/tipo_{$fila['tipo1']}.png' alt='{$fila['tipo1']}'</td>";
-            echo "<td><img src='tipoPokemon/tipo_{$fila['tipo2']}.png' alt=''</td>";
-            echo "<td>{$fila['numero_identificador']}</td>";
-            echo "<td>{$fila['nombre']}</td>";
-            echo "</tr>";
-        }
-        echo "</table>";
-    }
-    $conexion->close();
 }
-
 
 ?>
 
