@@ -12,7 +12,7 @@ include("header.php");
 ?>
 <div class="modificacion">
 
-    <form action="abmPokemon.php" method="post">
+    <form action="modificarPokemon.php" method="post">
         <input type="hidden" name="id" value="ID">
 
         <label for="nombre">Nombre:</label>

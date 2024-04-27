@@ -12,7 +12,7 @@ include("header.php");
 ?>
 <div class="agregarPokemon">
 
-    <form action="abmPokemon.php" method="post">
+    <form action="agregarPokemon.php" method="post" enctype="multipart/form-data">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required><br>
 
@@ -45,7 +45,11 @@ include("header.php");
                 }
             }
             ?>
+
         </select><br>
+
+        <label for="archivo">Imagen:</label>
+        <input type="file" name="archivo" id="archivo"><br>
 
         <label for="descripcion">Descripción:</label><br>
         <textarea id="descripcion" name="descripcion" rows="4" cols="50" required></textarea><br>
