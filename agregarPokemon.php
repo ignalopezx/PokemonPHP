@@ -9,11 +9,9 @@ if (isset($_POST['agregar'])) {
 if(isset($_FILES['archivo']) && $_FILES['archivo']['error'] === UPLOAD_ERR_OK){
     $nombreImagen = $_FILES['archivo']['name'];
     $rutaTemporal = $_FILES['archivo']['tmp_name'];
-    $carpetaDestino = 'C:\xampp\htdocs\Pokedex\PW2-TP\imagenes';
+    $carpetaDestino = 'imagenes';
 
-    $rutaDestino = $carpetaDestino . $nombreImagen;
-
-    if(move_uploaded_file($rutaTemporal, $rutaDestino)) {
+    if(move_uploaded_file($rutaTemporal, $carpetaDestino . '/' . $nombreImagen)) {
 
         $sql= "INSERT INTO pokemon (nombre, numero_identificador, imagen, tipo1, tipo2, descripcion) 
                 VALUES ('$nombre', '$numero', '$nombreImagen', '$tipo1', '$tipo2', '$descripcion')";

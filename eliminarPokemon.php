@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['eliminar'])) {
-    $id = 53;
+    $id = 51;
 
     $sql = "DELETE FROM pokemon WHERE id=$id";
 
