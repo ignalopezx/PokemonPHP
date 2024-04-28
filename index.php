@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <?php
         include("header.php");
         include("search-bar.php");
@@ -17,9 +18,12 @@
         mostrar_pokemons();
         
         if (isset($_GET['buscar'])) {
-            mostrar_pokemons($_GET['buscar']);
+            $pokemon_id = $_GET['buscar'];
+            // Redirigir a vistaPokemon.php con el ID del Pokémon buscado
+            header("Location: vistaPokemon.php?id=$pokemon_id");
+            exit(); // Asegura que el código se detenga después de la redirección
         }
-        ?>
+    ?>
     </div>
 </body>
 </html>

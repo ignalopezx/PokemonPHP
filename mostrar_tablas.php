@@ -35,6 +35,7 @@ function crearTabla($resultado_busqueda) {
         echo "<th>Tipo 2</th>";
         echo "<th>Número Identificador</th>";
         echo "<th>Nombre</th>";
+        echo "<th></th>";
         echo "</tr>";        
         while ($fila = mysqli_fetch_assoc($resultado_busqueda)) {
             echo "<tr>";
@@ -47,6 +48,7 @@ function crearTabla($resultado_busqueda) {
             }
             echo "<td>{$fila['numero_identificador']}</td>";
             echo "<td>{$fila['nombre']}</td>";
+            echo "<td><a class='ver-button' href='vistaPokemon.php?id={$fila['id']}'>Ver</a></td>"; // Botón "Ver" que redirige a vistaPokemon.php con el ID del Pokémon
             echo "</tr>";
         }
         echo "</table>";
