@@ -1,3 +1,21 @@
+<?php
+$database = "pokemons";
+$pass = "";
+$user = "root";
+$conexion = new mysqli("localhost", $user, $pass, $database);
+
+//$id = $_GET['id'];
+$id = 1; // ejemplo para ver que funciona, una vez hecho en el home el GET descomentar el de arriba
+
+$sql = "SELECT * 
+        FROM pokemon 
+        WHERE id = $id";
+
+$resultado = $conexion->query($sql);
+$pokemon = $resultado->fetch_assoc(); // el fetch_assoc() te convierte el resultado de consulta en un array
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,14 +34,14 @@ include("header.php");
         <input type="hidden" name="id" value="ID">
 
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required><br>
+        <input type="text" id="nombre" name="nombre" placeholder="<?php echo $pokemon['nombre'] ?>" required><br>
 
         <label for="numero">Número:</label>
-        <input type="number" id="numero" name="numero" required><br>
+        <input type="number" id="numero" name="numero" placeholder="<?php echo $pokemon['numero_identificador'] ?>" required><br>
 
         <label for="tipo1">Tipo 1:</label>
-        <select id="tipo1" name="tipo1" required>
-            <option value="">Selecciona un tipo</option>
+        <select id="tipo1" name="tipo1"  required>
+            <option value=""><?php echo $pokemon['tipo1'] ?></option>
             <?php
             $ruta_imagenes = 'tipoPokemon';
             $archivos = scandir($ruta_imagenes);
@@ -38,7 +56,7 @@ include("header.php");
 
         <label for="tipo2">Tipo 2:</label>
         <select id="tipo2" name="tipo2">
-            <option value="">Selecciona un tipo</option>
+            <option value=""><?php echo (!$pokemon['tipo2']) ?  "seleccionar un tipo" :  $pokemon['tipo2'] ?></option>
             <?php
             foreach ($archivos as $archivo) {
                 if (strpos($archivo, 'tipo_') === 0 && strpos($archivo, '_icono.png') === false && strpos($archivo, '.png') !== false) {
@@ -50,7 +68,7 @@ include("header.php");
         </select><br>
 
         <label for="descripcion">Descripción:</label><br>
-        <textarea id="descripcion" name="descripcion" rows="4" cols="50" required></textarea><br>
+        <textarea id="descripcion" name="descripcion" rows="4" cols="50" placeholder="<?php echo $pokemon['descripcion'] ?>" required></textarea><br>
 
         <input type="submit" name="modificar" value="Modificar">
     </form>
