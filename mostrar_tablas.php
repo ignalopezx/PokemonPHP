@@ -1,5 +1,4 @@
 <?php
-
 function mostrar_pokemons($busqueda = "") {
     $database = "pokemons";
     $pass = "";
