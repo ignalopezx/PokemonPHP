@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
+    width: 100%;
 }
 
 header {
@@ -24,6 +25,8 @@ h1 {
 .login input[type="text"],
 .login input[type="password"] {
     margin-right: 10px;
+    margin-bottom: 0.2rem;
+    margin-top: 0.2rem;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 3px;
@@ -43,13 +46,123 @@ h1 {
     padding: 10px;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.form-busqueda{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    align-items: center;
+    flex-direction: row;
 }
 
 form {
     display: flex;
     justify-content: center;
-    width: 100%;
-    margin: 20px 50px;
+    padding: 0.7rem;
+    align-items: center;
+}
+
+.btn-login{
+    width: 4rem;
+    height: 3rem;
+}
+
+.container-inputs{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+/* Media query para pantallas hasta 500px */
+@media only screen and (max-width: 500px) {
+    .logo {
+        width: 80px; /* Reducir el tamaño del logo */
+        height: 40px;
+    }
+
+    h1 {
+        font-size: 18px; /* Reducir el tamaño del texto */
+    }
+
+    .login input[type="text"],
+    .login input[type="password"],
+    .login button {
+        font-size: 12px; /* Reducir el tamaño de los elementos del formulario */
+        padding: 3px 5px; /* Ajustar el espaciado del formulario */
+    }
+
+    /* Estilos para el formulario en pantallas pequeñas */
+    .login input[type="text"],
+    .login input[type="password"] {
+        display: block; /* Mostrar los inputs en bloques */
+        margin-bottom: 10px; /* Añadir espacio entre los inputs */
+    }
+}
+
+/* Media query para pantallas desde 501px hasta 600px */
+@media only screen and (min-width: 501px) and (max-width: 600px) {
+    .logo {
+        width: 90px; /* Ajustar tamaño del logo */
+        height: 45px;
+    }
+
+    h1 {
+        font-size: 20px; /* Ajustar tamaño del texto */
+    }
+
+    .login input[type="text"],
+    .login input[type="password"],
+    .login button {
+        font-size: 14px; /* Ajustar tamaño de los elementos del formulario */
+        padding: 4px 6px; /* Ajustar espaciado del formulario */
+    }
+
+    /* Estilos para el formulario en pantallas medianas */
+    .login input[type="text"],
+    .login input[type="password"] {
+        display: block; /* Mostrar los inputs en bloques */
+        margin-bottom: 10px; /* Añadir espacio entre los inputs */
+    }
+}
+
+/* Media query para pantallas desde 601px hasta 800px */
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+    .logo {
+        width: 100px; /* Tamaño normal del logo */
+        height: 50px;
+    }
+
+    h1 {
+        font-size: 24px; /* Ajustar tamaño del texto */
+    }
+
+    .login input[type="text"],
+    .login input[type="password"],
+    .login button {
+        font-size: 16px; /* Ajustar tamaño de los elementos del formulario */
+        padding: 5px 8px; /* Ajustar espaciado del formulario */
+    }
+
+    /* Estilos para el formulario en pantallas medianas */
+    .login input[type="text"],
+    .login input[type="password"] {
+        display: inline-block; /* Mostrar los inputs en línea */
+        margin-right: 10px; /* Añadir espacio entre los inputs */
+        margin-bottom: 0; /* Eliminar espacio inferior */
+    }
+}
+
+/* Media query para pantallas desde 801px hasta 1000px */
+@media only screen and (min-width: 801px) and (max-width: 1000px) {
+    /* No se aplican cambios adicionales */
+}
+
+/* Media query para pantallas desde 1001px hasta 1400px */
+@media only screen and (min-width: 1001px) and (max-width: 1400px) {
+    /* No se aplican cambios adicionales */
 }
 
 .search-bar input[type="text"] {
@@ -126,6 +239,7 @@ img {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    margin: 3rem;
 }
 
 .pokemon-container:hover {
@@ -162,3 +276,122 @@ img {
 .btn-back:hover {
     background-color: #2980b9;
 }
+
+@media only screen and (max-width: 500px) {
+    .pokemon-container {
+        max-width: 80%;
+        padding: 10px;
+    }
+
+    .pokemon-img {
+        max-width: 180px;
+        max-height: 180px;
+        margin-bottom: 10px;
+    }
+
+    .pokemon-info {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .btn-back {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+/* Media queries para pantallas hasta 600px */
+@media only screen and (max-width: 600px) {
+    .pokemon-container {
+        max-width: 90%;
+        padding: 10px;
+    }
+
+    .pokemon-img {
+        max-width: 200px;
+        max-height: 200px;
+        margin-bottom: 10px;
+    }
+
+    .pokemon-info {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .btn-back {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+/* Media queries para pantallas hasta 800px */
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+    .pokemon-container {
+        max-width: 70%;
+        padding: 15px;
+    }
+
+    .pokemon-img {
+        max-width: 250px;
+        max-height: 250px;
+        margin-bottom: 15px;
+    }
+
+    .pokemon-info {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .btn-back {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+/* Media queries para pantallas hasta 1400px */
+@media only screen and (min-width: 801px) and (max-width: 1000px) {
+    .pokemon-container {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .pokemon-img {
+        max-width: 300px;
+        max-height: 300px;
+        margin-bottom: 20px;
+    }
+
+    .pokemon-info {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .btn-back {
+        padding: 12px 25px;
+        font-size: 18px;
+    }
+}
+
+/* Media query para pantallas desde 1001px hasta 1400px */
+@media only screen and (min-width: 1001px) and (max-width: 1400px) {
+    .pokemon-container {
+        max-width: 60%;
+        padding: 20px;
+    }
+
+    .pokemon-img {
+        max-width: 300px;
+        max-height: 300px;
+        margin-bottom: 20px;
+    }
+
+    .pokemon-info {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .btn-back {
+        padding: 12px 25px;
+        font-size: 18px;
+    }
+}
+
