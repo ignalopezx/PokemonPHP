@@ -2,7 +2,7 @@
 //editar
 
     if (isset($_POST['modificar'])) {
-        $id = 51;
+        $id = $_POST['id'];
         $nombre = $_POST['nombre'];
         $numero = $_POST['numero'];
         $tipo1 = $_POST['tipo1'];
@@ -20,6 +20,7 @@
 
         if ($conexion->query($sql) === TRUE) {
             echo "Usuario modificado correctamente.";
+            //redireccionar
         } else {
             echo "Error al modificar usuario: " . $conexion->error;
         }
