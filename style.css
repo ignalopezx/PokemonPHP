@@ -155,16 +155,6 @@ justify-content: center;
     }
 }
 
-/* Media query para pantallas desde 801px hasta 1000px */
-@media only screen and (min-width: 801px) and (max-width: 1000px) {
-    /* No se aplican cambios adicionales */
-}
-
-/* Media query para pantallas desde 1001px hasta 1400px */
-@media only screen and (min-width: 1001px) and (max-width: 1400px) {
-    /* No se aplican cambios adicionales */
-}
-
 .search-bar input[type="text"] {
     flex: 1;
     padding: 8px;
@@ -180,6 +170,10 @@ justify-content: center;
     border-radius: 3px;
     margin-left: 10px;
     cursor: pointer;
+}
+
+.resultados{
+    width: 100%;
 }
 
 table {
