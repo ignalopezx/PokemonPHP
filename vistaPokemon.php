@@ -3,22 +3,21 @@
 session_start();
 
 $database = "pokemons";
-$pass = ""; // Contraseña vacía para el usuario root
 $user = "root";
+$pass = ""; // Suponemos que todos tenemos usuario root, y la contraseña vacia en su SQL
 $conexion = new mysqli("localhost", $user, $pass, $database);
 
 if ($conexion->connect_error) {
     die("Conexión fallida: " . $conexion->connect_error);
 }
 
-// Obtener el Pokémon buscado por su ID
 if (isset($_GET['id'])) {
     $pokemon_id = $_GET['id'];
     $sql = "SELECT * FROM pokemon WHERE id = $pokemon_id";
     $result = $conexion->query($sql);
 
     if ($result->num_rows > 0) {
-        // Mostrar datos del Pokémon
+
         $pokemon = $result->fetch_assoc();
     } else {
         echo "No se encontró el Pokémon.";
@@ -48,7 +47,7 @@ $conexion->close();
         <div class="pokemon-container">
             <h1 style="text-align: center; margin:20px;">Detalles del Pokémon</h1>
             <?php
-            // Conexión a la base de datos
+
             $database = "pokemons";
             $pass = "";
             $user = "root";
@@ -58,14 +57,12 @@ $conexion->close();
                 die("Conexión fallida: " . $conexion->connect_error);
             }
 
-            // Obtener el Pokémon buscado por su ID
             if (isset($_GET['id'])) {
                 $pokemon_id = $_GET['id'];
                 $sql = "SELECT * FROM pokemon WHERE id = $pokemon_id";
                 $result = $conexion->query($sql);
 
                 if ($result->num_rows > 0) {
-                    // Mostrar datos del Pokémon
                     $pokemon = $result->fetch_assoc();
             ?>
                     <div style="display:flex; align-items:center; justify-content:center; width:100%;">
@@ -77,7 +74,7 @@ $conexion->close();
                         <p><strong>Tipo 1:</strong> <?php echo $pokemon['tipo1']; ?></p>
                         <p><strong>Tipo 2:</strong> <?php echo $pokemon['tipo2']; ?></p>
                         <p><strong>Descripción:</strong> <?php echo $pokemon['descripcion']; ?></p>
-                        <!-- Aquí podrías mostrar más detalles del Pokémon según tu base de datos -->
+                        
                     </div>
                     <div style="text-align: center; margin-bottom: 2rem; margin-top:2.5rem;">
                         <a href="index.php" class="btn-back" style="text-decoration:none;">Volver</a>

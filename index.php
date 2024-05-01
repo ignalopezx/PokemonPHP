@@ -12,16 +12,15 @@
         include("header.php");
         include("search-bar.php");
     ?>
-  
+
         <?php
         include "mostrar_tablas.php";
         mostrar_pokemons();
         
         if (isset($_GET['buscar'])) {
             $pokemon_id = $_GET['buscar'];
-            // Redirigir a vistaPokemon.php con el ID del Pokémon buscado
             header("Location: vistaPokemon.php?id=$pokemon_id");
-            exit(); // Asegura que el código se detenga después de la redirección
+            exit();
         }
     ?>
 

@@ -49,12 +49,13 @@ function crearTabla($resultado_busqueda)
         echo "<td class='espacio-top numero-columna'>{$fila['numero_identificador']}</td>";
         echo "<td class='espacio-top'>{$fila['nombre']}</td>";
         echo "</tr>";
+        
         // Agregar fila adicional para el botón "Ver"
         echo "<tr class='ver-row'>";
         echo "<td colspan='5' style='padding-bottom: 10px;'><a class='ver-button' href='vistaPokemon.php?id={$fila['id']}'>Ver</a></td>";
         echo "</tr>";
         // Agregar fila línea divisoria
-        echo "<tr class='ver-row' style='background-color: #fff; height:20px;'>";
+        echo "<tr style='background-color: #fff; height:20px;'>";
         echo "<td colspan='5' style='background-color=background-color: #f2f;'></td>";
         echo "</tr>";
     }
