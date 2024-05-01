@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_GET['id'])) {
     //$id = 51;
     $id = $_GET['id'];

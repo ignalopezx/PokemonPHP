@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $database = "pokemons";
 $pass = "";
 $user = "root";
