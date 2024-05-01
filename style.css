@@ -47,6 +47,7 @@ h1 {
     border-radius: 0.1875em;
     /* 3px en em */
     cursor: pointer;
+    height: 2em;
 }
 
 
