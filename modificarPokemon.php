@@ -1,7 +1,10 @@
 <?php
 //editar
 
-    if (isset($_POST['modificar'])) {
+session_start();
+
+
+if (isset($_POST['modificar'])) {
         $id = $_POST['id'];
         $nombre = $_POST['nombre'];
         $numero = $_POST['numero'];
