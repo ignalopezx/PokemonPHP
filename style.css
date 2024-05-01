@@ -14,8 +14,8 @@ header {
 }
 
 .logo {
-    width: 100px; 
-    height: 50px; 
+    width: 100px;
+    height: 50px;
 }
 
 h1 {
@@ -24,22 +24,31 @@ h1 {
 
 .login input[type="text"],
 .login input[type="password"] {
-    margin-right: 10px;
-    margin-bottom: 0.2rem;
-    margin-top: 0.2rem;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    margin-right: 0.625em;
+    /* 10px en em */
+    margin-bottom: 0.0125em;
+    /* 0.2rem en em */
+    margin-top: 0.0125em;
+    /* 0.2rem en em */
+    padding: 0.3125em;
+    /* 5px en em */
+    border: 0.0625em solid #ccc;
+    /* 1px en em */
+    border-radius: 0.1875em;
+    /* 3px en em */
 }
 
 .login button {
-    padding: 5px 10px;
+    padding: 0.3125em 0.400em;
+    /* 5px 10px en em */
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 3px;
+    border-radius: 0.1875em;
+    /* 3px en em */
     cursor: pointer;
 }
+
 
 .search-bar {
     margin-top: 20px;
@@ -49,7 +58,7 @@ h1 {
     justify-content: center;
 }
 
-.form-busqueda{
+.form-busqueda {
     display: flex;
     justify-content: center;
     width: 70%;
@@ -64,159 +73,199 @@ form {
     align-items: center;
 }
 
-.btn-login{
+.btn-login {
     width: 4rem;
     height: 3rem;
 }
 
-.container-inputs{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+.container-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Media query para pantallas hasta 500px */
-@media only screen and (max-width: 500px) {
+/* Media query para pantallas hasta 400px */
+@media only screen and (min-width: 300px) and (max-width: 400px) {
     .logo {
-        width: 80px; /* Reducir el tamaño del logo */
-        height: 40px;
+        width: 4em; /* 80px en em */
+        height: 2em; /* 40px en em */
     }
 
     h1 {
-        font-size: 18px; /* Reducir el tamaño del texto */
+        font-size: 1em; /* 16px en em */
     }
 
     .login input[type="text"],
-    .login input[type="password"],
+    .login input[type="password"] {
+        width: 8em; /* Ancho reducido para los campos de entrada */
+        font-size: 0.75em; /* 12px en em */
+        padding: 0.125em 0.25em; /* 2px 4px en em */
+    }
+
     .login button {
-        font-size: 12px; /* Reducir el tamaño de los elementos del formulario */
-        padding: 3px 5px; /* Ajustar el espaciado del formulario */
+        height: 2em; /* Altura reducida para el botón */
+        font-size: 0.75em; /* 12px en em */
+        padding: 0.125em 0.25em; /* 2px 4px en em */
     }
 
     /* Estilos para el formulario en pantallas pequeñas */
     .login input[type="text"],
     .login input[type="password"] {
         display: block; /* Mostrar los inputs en bloques */
-        margin-bottom: 10px; /* Añadir espacio entre los inputs */
+        margin-bottom: 0.25em; /* Ajustar el margen inferior */
+        margin-top: 0.25em; /* Ajustar el margen superior */
     }
 }
 
-/* Media query para pantallas desde 501px hasta 600px */
-@media only screen and (min-width: 501px) and (max-width: 600px) {
+
+/* Media query para pantallas desde 401px hasta 500px */
+@media only screen and (min-width: 401px) and (max-width: 500px) {
     .logo {
-        width: 90px; /* Ajustar tamaño del logo */
-        height: 45px;
+        width: 4.5em; /* 90px en em */
+        height: 2.25em; /* 45px en em */
     }
 
     h1 {
-        font-size: 20px; /* Ajustar tamaño del texto */
+        font-size: 1em; /* 16px en em */
     }
 
     .login input[type="text"],
-    .login input[type="password"],
+    .login input[type="password"] {
+        width: 8em; /* Ancho reducido para los campos de entrada */
+        font-size: 0.8125em; /* 13px en em */
+        padding: 0.15625em 0.28125em; /* 3px 4px en em */
+    }
+
     .login button {
-        font-size: 14px; /* Ajustar tamaño de los elementos del formulario */
-        padding: 4px 6px; /* Ajustar espaciado del formulario */
+        height: 2em; /* Altura reducida para el botón */
+        font-size: 0.8125em; /* 13px en em */
+        padding: 0.15625em 0.28125em; /* 3px 4px en em */
     }
 
     /* Estilos para el formulario en pantallas medianas */
     .login input[type="text"],
     .login input[type="password"] {
         display: block; /* Mostrar los inputs en bloques */
-        margin-bottom: 10px; /* Añadir espacio entre los inputs */
+        margin-bottom: 0.25em; /* Ajustar el margen inferior */
+        margin-top: 0.25em; /* Ajustar el margen superior */
     }
 }
 
-/* Media query para pantallas desde 601px hasta 800px */
-@media only screen and (min-width: 601px) and (max-width: 800px) {
+/* Media query para pantallas desde 501px hasta 600px */
+@media only screen and (min-width: 501px) {
     .logo {
-        width: 100px; /* Tamaño normal del logo */
-        height: 50px;
+        width: 5.625em;
+        /* 90px en em */
+        height: 2.8125em;
+        /* 45px en em */
     }
 
     h1 {
-        font-size: 24px; /* Ajustar tamaño del texto */
+        font-size: 1.25em;
+        /* 20px en em */
     }
 
     .login input[type="text"],
     .login input[type="password"],
     .login button {
-        font-size: 16px; /* Ajustar tamaño de los elementos del formulario */
-        padding: 5px 8px; /* Ajustar espaciado del formulario */
+        font-size: 0.875em;
+        /* 14px en em */
+        padding: 0.25em 0.375em;
+        /* 4px 6px en em */
     }
 
     /* Estilos para el formulario en pantallas medianas */
     .login input[type="text"],
     .login input[type="password"] {
-        display: inline-block; /* Mostrar los inputs en línea */
-        margin-right: 10px; /* Añadir espacio entre los inputs */
-        margin-bottom: 0; /* Eliminar espacio inferior */
+        display: block;
+        /* Mostrar los inputs en bloques */
+        margin-bottom: 0.425em;
+        margin-top: 0.425em;
     }
 }
+        .search-bar input[type="text"] {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
 
-.search-bar input[type="text"] {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
+        .search-bar button {
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
 
-.search-bar button {
-    padding: 8px 15px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    margin-left: 10px;
-    cursor: pointer;
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
 
-.resultados{
-    width: 100%;
-}
+        @media screen and (max-width: 800px) {
+            table {
+                width: 100%;
+            }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
+            .numero-identificador {
+                display: none;
+            }
+        }
 
-th, td {
-    padding: 12px;
-    text-align: center;
-}
+        @media screen and (max-width: 550px) {
+            .numero-columna {
+                display: none;
+            }
+        }
 
-th {
-    background-color: #f2f2f2;
-}
+        .espacio {
+            padding: 12px;
+        }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
+        .espacio-top {
+            padding-top: 10px;
+        }
 
-img {
-    max-width: 100px;
-    height: auto;
-}
+        th,
+        td {
+            text-align: center;
+        }
 
-.ver-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 8px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 5px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
+        th {
+            background-color: #f2f2f2;
+        }
 
-.ver-button:hover {
-    background-color: #45a049;
-}
+        tr {
+            background-color: #f2f2f2;
+        }
 
-.section-pokemon{
-    font-family: Arial, sans-serif;
+        img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        .ver-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 40px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .ver-button:hover {
+            background-color: #45a049;
+        }
+
+        .section-pokemon {
+            font-family: Arial, sans-serif;
             background-color: #f7f7f7;
             color: #333;
             margin: 0;
@@ -225,167 +274,173 @@ img {
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-}
+        }
 
-.pokemon-container {
-    max-width: 800px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 3rem;
-}
+        .pokemon-container {
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 3rem;
+        }
 
-.pokemon-container:hover {
-    transform: scale(1.05); /* Agranda el contenedor al pasar el cursor */
-}
+        .pokemon-container:hover {
+            transform: scale(1.05);
+            /* Agranda el contenedor al pasar el cursor */
+        }
 
-.pokemon-img {
-    max-width: 250px;
-    max-height: 250px;
-    margin-bottom: 20px;
-}
-.pokemon-info {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-.pokemon-info p {
-    margin: 10px 0;
-}
-.pokemon-info p strong {
-    font-weight: bold;
-    color: #333;
-}
-.btn-back {
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-.btn-back:hover {
-    background-color: #2980b9;
-}
+        .pokemon-img {
+            max-width: 250px;
+            max-height: 250px;
+            margin-bottom: 20px;
+        }
 
-@media only screen and (max-width: 500px) {
-    .pokemon-container {
-        max-width: 80%;
-        padding: 10px;
-    }
+        .pokemon-info {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
 
-    .pokemon-img {
-        max-width: 180px;
-        max-height: 180px;
-        margin-bottom: 10px;
-    }
+        .pokemon-info p {
+            margin: 10px 0;
+        }
 
-    .pokemon-info {
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
+        .pokemon-info p strong {
+            font-weight: bold;
+            color: #333;
+        }
 
-    .btn-back {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
-}
-/* Media queries para pantallas hasta 600px */
-@media only screen and (max-width: 600px) {
-    .pokemon-container {
-        max-width: 90%;
-        padding: 10px;
-    }
+        .btn-back {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-    .pokemon-img {
-        max-width: 200px;
-        max-height: 200px;
-        margin-bottom: 10px;
-    }
+        .btn-back:hover {
+            background-color: #2980b9;
+        }
 
-    .pokemon-info {
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
+        @media only screen and (max-width: 500px) {
+            .pokemon-container {
+                max-width: 80%;
+                padding: 10px;
+            }
 
-    .btn-back {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
-}
+            .pokemon-img {
+                max-width: 180px;
+                max-height: 180px;
+                margin-bottom: 10px;
+            }
 
-/* Media queries para pantallas hasta 800px */
-@media only screen and (min-width: 601px) and (max-width: 800px) {
-    .pokemon-container {
-        max-width: 70%;
-        padding: 15px;
-    }
+            .pokemon-info {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
 
-    .pokemon-img {
-        max-width: 250px;
-        max-height: 250px;
-        margin-bottom: 15px;
-    }
+            .btn-back {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
 
-    .pokemon-info {
-        font-size: 18px;
-        margin-bottom: 15px;
-    }
+        /* Media queries para pantallas hasta 600px */
+        @media only screen and (max-width: 600px) {
+            .pokemon-container {
+                max-width: 90%;
+                padding: 10px;
+            }
 
-    .btn-back {
-        padding: 10px 20px;
-        font-size: 16px;
-    }
-}
+            .pokemon-img {
+                max-width: 200px;
+                max-height: 200px;
+                margin-bottom: 10px;
+            }
 
-/* Media queries para pantallas hasta 1400px */
-@media only screen and (min-width: 801px) and (max-width: 1000px) {
-    .pokemon-container {
-        max-width: 90%;
-        padding: 20px;
-    }
+            .pokemon-info {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
 
-    .pokemon-img {
-        max-width: 300px;
-        max-height: 300px;
-        margin-bottom: 20px;
-    }
+            .btn-back {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
 
-    .pokemon-info {
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
+        /* Media queries para pantallas hasta 800px */
+        @media only screen and (min-width: 601px) and (max-width: 800px) {
+            .pokemon-container {
+                max-width: 70%;
+                padding: 15px;
+            }
 
-    .btn-back {
-        padding: 12px 25px;
-        font-size: 18px;
-    }
-}
+            .pokemon-img {
+                max-width: 250px;
+                max-height: 250px;
+                margin-bottom: 15px;
+            }
 
-/* Media query para pantallas desde 1001px hasta 1400px */
-@media only screen and (min-width: 1001px) and (max-width: 1400px) {
-    .pokemon-container {
-        max-width: 60%;
-        padding: 20px;
-    }
+            .pokemon-info {
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
 
-    .pokemon-img {
-        max-width: 300px;
-        max-height: 300px;
-        margin-bottom: 20px;
-    }
+            .btn-back {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
 
-    .pokemon-info {
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
+        /* Media queries para pantallas hasta 1400px */
+        @media only screen and (min-width: 801px) and (max-width: 1000px) {
+            .pokemon-container {
+                max-width: 90%;
+                padding: 20px;
+            }
 
-    .btn-back {
-        padding: 12px 25px;
-        font-size: 18px;
-    }
-}
+            .pokemon-img {
+                max-width: 300px;
+                max-height: 300px;
+                margin-bottom: 20px;
+            }
 
+            .pokemon-info {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            .btn-back {
+                padding: 12px 25px;
+                font-size: 18px;
+            }
+        }
+
+        /* Media query para pantallas desde 1001px hasta 1400px */
+        @media only screen and (min-width: 1001px) and (max-width: 1400px) {
+            .pokemon-container {
+                max-width: 60%;
+                padding: 20px;
+            }
+
+            .pokemon-img {
+                max-width: 300px;
+                max-height: 300px;
+                margin-bottom: 20px;
+            }
+
+            .pokemon-info {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            .btn-back {
+                padding: 12px 25px;
+                font-size: 18px;
+            }
+        }

@@ -12,7 +12,7 @@
         include("header.php");
         include("search-bar.php");
     ?>
-    <div class="resultados">
+  
         <?php
         include "mostrar_tablas.php";
         mostrar_pokemons();
@@ -24,7 +24,7 @@
             exit(); // Asegura que el código se detenga después de la redirección
         }
     ?>
-    </div>
+
 </body>
 </html>
 
