@@ -17,7 +17,7 @@ if(isset($_FILES['archivo']) && $_FILES['archivo']['error'] === UPLOAD_ERR_OK){
     if(move_uploaded_file($rutaTemporal, $carpetaDestino . '/' . $nombreImagen)) {
 
         $sql= "INSERT INTO pokemon (nombre, numero_identificador, imagen, tipo1, tipo2, descripcion) 
-                VALUES ('$nombre', '$numero', '$nombreImagen', '$tipo1', '$tipo2', '$descripcion')";
+                VALUES ('$nombre', '$numero', 'imagenes/$nombreImagen', '$tipo1', '$tipo2', '$descripcion')";
 
         $database = "pokemons";
         $pass = "";

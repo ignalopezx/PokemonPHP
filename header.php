@@ -1,6 +1,6 @@
 <header>
     <div class="logo">
-        <img src="imagenes/pokeball-logo.png" alt="pokeball-logo" width="50px" height="50px">
+        <a href="index.php"><img src="imagenes/pokeball-logo.png" alt="pokeball-logo" width="50px" height="50px"></a>
     </div>
     <h1>Pokédex</h1>
     <div class="login">

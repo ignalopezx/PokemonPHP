@@ -25,27 +25,19 @@ h1 {
 .login input[type="text"],
 .login input[type="password"] {
     margin-right: 0.625em;
-    /* 10px en em */
     margin-bottom: 0.0125em;
-    /* 0.2rem en em */
     margin-top: 0.0125em;
-    /* 0.2rem en em */
     padding: 0.3125em;
-    /* 5px en em */
     border: 0.0625em solid #ccc;
-    /* 1px en em */
     border-radius: 0.1875em;
-    /* 3px en em */
 }
 
 .login button {
     padding: 0.3125em 0.400em;
-    /* 5px 10px en em */
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 0.1875em;
-    /* 3px en em */
     cursor: pointer;
     height: 2em;
 }
@@ -89,33 +81,32 @@ form {
 /* Media query para pantallas hasta 400px */
 @media only screen and (min-width: 300px) and (max-width: 400px) {
     .logo {
-        width: 4em; /* 80px en em */
-        height: 2em; /* 40px en em */
+        width: 4em;
+        height: 2em;
     }
 
     h1 {
-        font-size: 1em; /* 16px en em */
+        font-size: 1em;
     }
 
     .login input[type="text"],
     .login input[type="password"] {
-        width: 8em; /* Ancho reducido para los campos de entrada */
-        font-size: 0.75em; /* 12px en em */
-        padding: 0.125em 0.25em; /* 2px 4px en em */
+        width: 8em; 
+        font-size: 0.75em;
+        padding: 0.125em 0.25em;
     }
 
     .login button {
-        height: 2em; /* Altura reducida para el botón */
-        font-size: 0.75em; /* 12px en em */
-        padding: 0.125em 0.25em; /* 2px 4px en em */
+        height: 2em;
+        font-size: 0.75em; 
+        padding: 0.125em 0.25em; 
     }
 
-    /* Estilos para el formulario en pantallas pequeñas */
     .login input[type="text"],
     .login input[type="password"] {
-        display: block; /* Mostrar los inputs en bloques */
-        margin-bottom: 0.25em; /* Ajustar el margen inferior */
-        margin-top: 0.25em; /* Ajustar el margen superior */
+        display: block;
+        margin-bottom: 0.25em;
+        margin-top: 0.25em;
     }
 }
 
@@ -123,43 +114,39 @@ form {
 /* Media query para pantallas desde 401px hasta 500px */
 @media only screen and (min-width: 401px) and (max-width: 500px) {
     .logo {
-        width: 4.5em; /* 90px en em */
-        height: 2.25em; /* 45px en em */
+        width: 4.5em;
+        height: 2.25em;
     }
 
     h1 {
-        font-size: 1em; /* 16px en em */
+        font-size: 1em;
     }
 
     .login input[type="text"],
     .login input[type="password"] {
-        width: 8em; /* Ancho reducido para los campos de entrada */
-        font-size: 0.8125em; /* 13px en em */
-        padding: 0.15625em 0.28125em; /* 3px 4px en em */
+        width: 8em;
+        font-size: 0.8125em; 
+        padding: 0.15625em 0.28125em;
     }
 
     .login button {
-        height: 2em; /* Altura reducida para el botón */
-        font-size: 0.8125em; /* 13px en em */
-        padding: 0.15625em 0.28125em; /* 3px 4px en em */
+        height: 2em; 
+        font-size: 0.8125em; 
+        padding: 0.15625em 0.28125em;
     }
 
-    /* Estilos para el formulario en pantallas medianas */
     .login input[type="text"],
     .login input[type="password"] {
-        display: block; /* Mostrar los inputs en bloques */
-        margin-bottom: 0.25em; /* Ajustar el margen inferior */
-        margin-top: 0.25em; /* Ajustar el margen superior */
+        display: block; 
+        margin-bottom: 0.25em;
+        margin-top: 0.25em; 
     }
 }
 
-/* Media query para pantallas desde 501px hasta 600px */
 @media only screen and (min-width: 501px) {
     .logo {
         width: 5.625em;
-        /* 90px en em */
         height: 2.8125em;
-        /* 45px en em */
     }
 
     h1 {
@@ -171,16 +158,12 @@ form {
     .login input[type="password"],
     .login button {
         font-size: 0.875em;
-        /* 14px en em */
         padding: 0.25em 0.375em;
-        /* 4px 6px en em */
     }
 
-    /* Estilos para el formulario en pantallas medianas */
     .login input[type="text"],
     .login input[type="password"] {
         display: block;
-        /* Mostrar los inputs en bloques */
         margin-bottom: 0.425em;
         margin-top: 0.425em;
     }
@@ -259,10 +242,44 @@ form {
             border-radius: 5px;
             transition-duration: 0.4s;
             cursor: pointer;
+            margin-right: 5px;
         }
 
         .ver-button:hover {
             background-color: #45a049;
+        }
+
+        .eliminar-button {
+            background-color: #f33615;
+            color: white;
+            padding: 8px 40px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .eliminar-button:hover {
+            background-color: #ee2d0b;
+        }
+
+        .modificar-button {
+            background-color: #156ef3;
+            color: white;
+            padding: 8px 40px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        .modificar-button:hover {
+            background-color: #1260d6;
         }
 
         .section-pokemon {
@@ -288,7 +305,6 @@ form {
 
         .pokemon-container:hover {
             transform: scale(1.05);
-            /* Agranda el contenedor al pasar el cursor */
         }
 
         .pokemon-img {
@@ -350,7 +366,6 @@ form {
             }
         }
 
-        /* Media queries para pantallas hasta 600px */
         @media only screen and (max-width: 600px) {
             .pokemon-container {
                 max-width: 90%;
@@ -374,7 +389,6 @@ form {
             }
         }
 
-        /* Media queries para pantallas hasta 800px */
         @media only screen and (min-width: 601px) and (max-width: 800px) {
             .pokemon-container {
                 max-width: 70%;
@@ -398,7 +412,6 @@ form {
             }
         }
 
-        /* Media queries para pantallas hasta 1400px */
         @media only screen and (min-width: 801px) and (max-width: 1000px) {
             .pokemon-container {
                 max-width: 90%;
@@ -422,7 +435,6 @@ form {
             }
         }
 
-        /* Media query para pantallas desde 1001px hasta 1400px */
         @media only screen and (min-width: 1001px) and (max-width: 1400px) {
             .pokemon-container {
                 max-width: 60%;

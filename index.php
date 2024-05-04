@@ -11,9 +11,9 @@
     <?php
         include("header.php");
         include("search-bar.php");
+        echo "<td colspan='5' style='padding-bottom: 10px;'></td>";
     ?>
-
-        <?php
+    <?php
         include "mostrar_tablas.php";
         mostrar_pokemons();
         
@@ -23,7 +23,6 @@
             exit();
         }
     ?>
-
 </body>
 </html>
 
