@@ -1,6 +1,8 @@
 <?php
 function mostrar_pokemons($busqueda = "")
 {
+    $sesionIniciada = TRUE; # Cambiar cuando este el login
+
     $database = "pokemons";
     $pass = "";
     $user = "root";
@@ -17,17 +19,17 @@ function mostrar_pokemons($busqueda = "")
     $resultado = $conexion->query($consulta);
 
     if ($resultado->num_rows > 0) {
-        crearTabla($resultado);
+        crearTabla($resultado, $sesionIniciada);
     } else {
         echo "<p style='font-size: 35px; font-weight: bold; text-align: center;'>Pokémon no encontrado</p>";
         $sql_todos = "SELECT * FROM pokemon";
         $resultado_todos = $conexion->query($sql_todos);
-        crearTabla($resultado_todos);
+        crearTabla($resultado_todos, $sesionIniciada);
     }
     $conexion->close();
 }
 
-function crearTabla($resultado_busqueda)
+function crearTabla($resultado_busqueda, $sesionIniciada)
 {
     echo "<table style='width:100%;'>";
     echo "<tr style='border-bottom: 20px solid white; border-top: 2px solid white;'>";
@@ -52,12 +54,25 @@ function crearTabla($resultado_busqueda)
         
         // Agregar fila adicional para el botón "Ver"
         echo "<tr class='ver-row'>";
-        echo "<td colspan='5' style='padding-bottom: 10px;'><a class='ver-button' href='vistaPokemon.php?id={$fila['id']}'>Ver</a></td>";
+        echo "<td colspan='5' style='padding-bottom: 10px;'>
+                <a class='ver-button' href='vistaPokemon.php?id={$fila['id']}'>Ver</a>";
+                if ($sesionIniciada == TRUE) {
+                    echo "<a class='modificar-button' href='modificar.php?id={$fila['id']}'>Modificar</a>";
+                    echo "<a class='eliminar-button' href='eliminarPokemon.php?id={$fila['id']}'>Eliminar</a>";
+                };
+            echo "</td>";
         echo "</tr>";
         // Agregar fila línea divisoria
         echo "<tr style='background-color: #fff; height:20px;'>";
-        echo "<td colspan='5' style='background-color=background-color: #f2f;'></td>";
+        echo "<td colspan='5' style='background-color: #fff;'></td>";
         echo "</tr>";
     }
+    if ($sesionIniciada == TRUE) {
+        echo "<tr class='ver-row' style='background-color: #fff;'>";
+        echo "<td colspan='5' style='padding-bottom: 10px;'>
+                <a class='ver-button' href='agregar.php'>Agregar Pokemon</a>
+            </td>";
+        echo "</tr>";
+    };
     echo "</table>";
 }

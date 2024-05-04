@@ -1,8 +1,6 @@
 <?php
-//editar
 
 session_start();
-
 
 if (isset($_POST['modificar'])) {
         $id = $_POST['id'];
@@ -22,10 +20,10 @@ if (isset($_POST['modificar'])) {
         $conexion = new mysqli("localhost", $user, $pass, $database);
 
         if ($conexion->query($sql) === TRUE) {
-            echo "Usuario modificado correctamente.";
-            //redireccionar
+            header('Location: index.php');
         } else {
-            echo "Error al modificar usuario: " . $conexion->error;
+            include("header.php");
+            echo "Error al modificar el pokemon: " . $conexion->error;
         }
     }
 

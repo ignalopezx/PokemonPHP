@@ -63,3 +63,13 @@ INSERT INTO pokemon (numero_identificador, imagen, nombre, tipo1, tipo2, descrip
 (48, 'imagenes/Hitmonlee.png', 'Hitmonlee', 'Lucha', NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'),
 (49, 'imagenes/Marowak.png', 'Marowak', 'Tierra', NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'),
 (50, 'imagenes/Cloyster.png', 'Cloyster', 'Agua', 'Hielo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    numero_identificador INT UNIQUE NOT NULL,
+    usuario VARCHAR(30) NOT NULL,
+    contraseña VARCHAR(30) NOT NULL
+);
+
+INSERT INTO users (numero_identificador, usuario, contraseña) VALUES
+(1,"admin", "admin");
