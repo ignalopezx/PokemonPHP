@@ -8,9 +8,6 @@ if( isset($_GET["error"]) ){
         case 2:
             echo "<div style='background-color: aquamarine;color:red' >Debe completar los datos </div> ";
             break;
-        case 3:
-            echo "<div style='background-color: aquamarine;color:red' >LTA </div> ";
-            break;
     }
 }
 
