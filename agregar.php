@@ -8,6 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultado de la búsqueda</title>
+    <link rel="stylesheet" href="abmestilos.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -58,7 +59,7 @@ include("header.php");
         <label for="descripcion">Descripción:</label><br>
         <textarea id="descripcion" name="descripcion" rows="4" cols="50" required></textarea><br>
 
-        <input type="submit" name="agregar" value="Agregar">
+        <input class="button" type="submit" name="agregar" value="Agregar">
     </form>
 </div>
 </body>
