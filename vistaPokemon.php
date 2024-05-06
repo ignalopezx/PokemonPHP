@@ -1,10 +1,7 @@
 <?php
-
-session_start();
-
 $database = "pokemons";
 $user = "root";
-$pass = ""; // Suponemos que todos tenemos usuario root, y la contraseña vacia en su SQL
+$pass = "";
 $conexion = new mysqli("localhost", $user, $pass, $database);
 
 if ($conexion->connect_error) {
