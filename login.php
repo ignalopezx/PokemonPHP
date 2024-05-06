@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if ( isset($_POST["usuario"]) &&  isset($_POST["contraseña"]) ){
     $usuario = $_POST["usuario"];
     $contraseña = $_POST["contraseña"];
@@ -8,6 +7,7 @@ if ( isset($_POST["usuario"]) &&  isset($_POST["contraseña"]) ){
     $esValido = consultarBD($usuario, $contraseña);
 
     if($esValido){
+        session_start();
         $_SESSION["usuario"] = $usuario;
 
         header("location:index.php");

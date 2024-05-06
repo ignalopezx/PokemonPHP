@@ -56,7 +56,7 @@ function crearTabla($resultado_busqueda, $sesionIniciada)
         echo "<tr class='ver-row'>";
         echo "<td colspan='5' style='padding-bottom: 10px;'>
                 <a class='ver-button' href='vistaPokemon.php?id={$fila['id']}'>Ver</a>";
-                if ($sesionIniciada == TRUE) {
+                if (isset($_SESSION["usuario"])) {
                     echo "<a class='modificar-button' href='modificar.php?id={$fila['id']}'>Modificar</a>";
                     echo "<a class='eliminar-button' href='eliminarPokemon.php?id={$fila['id']}'>Eliminar</a>";
                 };
@@ -67,7 +67,7 @@ function crearTabla($resultado_busqueda, $sesionIniciada)
         echo "<td colspan='5' style='background-color: #fff;'></td>";
         echo "</tr>";
     }
-    if ($sesionIniciada == TRUE) {
+    if (isset($_SESSION["usuario"])) {
         echo "<tr class='ver-row' style='background-color: #fff;'>";
         echo "<td colspan='5' style='padding-bottom: 10px;'>
                 <a class='ver-button' href='agregar.php'>Agregar Pokemon</a>
