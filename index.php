@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
     <?php
+    session_start();
         include("header.php");
         include("search-bar.php");
         echo "<td colspan='5' style='padding-bottom: 10px;'></td>";

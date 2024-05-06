@@ -78,6 +78,7 @@ form {
     justify-content: center;
 }
 
+
 /* Media query para pantallas hasta 400px */
 @media only screen and (min-width: 300px) and (max-width: 400px) {
     .logo {
