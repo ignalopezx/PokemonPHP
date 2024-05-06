@@ -1,7 +1,6 @@
 <?php
 function mostrar_pokemons($busqueda = "")
 {
-    $sesionIniciada = TRUE; # Cambiar cuando este el login
 
     $database = "pokemons";
     $pass = "";
@@ -19,17 +18,17 @@ function mostrar_pokemons($busqueda = "")
     $resultado = $conexion->query($consulta);
 
     if ($resultado->num_rows > 0) {
-        crearTabla($resultado, $sesionIniciada);
+        crearTabla($resultado);
     } else {
         echo "<p style='font-size: 35px; font-weight: bold; text-align: center;'>Pokémon no encontrado</p>";
         $sql_todos = "SELECT * FROM pokemon";
         $resultado_todos = $conexion->query($sql_todos);
-        crearTabla($resultado_todos, $sesionIniciada);
+        crearTabla($resultado_todos);
     }
     $conexion->close();
 }
 
-function crearTabla($resultado_busqueda, $sesionIniciada)
+function crearTabla($resultado_busqueda)
 {
     echo "<table style='width:100%;'>";
     echo "<tr style='border-bottom: 20px solid white; border-top: 2px solid white;'>";
@@ -52,7 +51,6 @@ function crearTabla($resultado_busqueda, $sesionIniciada)
         echo "<td class='espacio-top'>{$fila['nombre']}</td>";
         echo "</tr>";
         
-        // Agregar fila adicional para el botón "Ver"
         echo "<tr class='ver-row'>";
         echo "<td colspan='5' style='padding-bottom: 10px;'>
                 <a class='ver-button' href='vistaPokemon.php?id={$fila['id']}'>Ver</a>";
@@ -62,7 +60,6 @@ function crearTabla($resultado_busqueda, $sesionIniciada)
                 };
             echo "</td>";
         echo "</tr>";
-        // Agregar fila línea divisoria
         echo "<tr style='background-color: #fff; height:20px;'>";
         echo "<td colspan='5' style='background-color: #fff;'></td>";
         echo "</tr>";

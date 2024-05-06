@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 if (isset($_POST['agregar'])) {
     $nombre = $_POST['nombre'];
     $numero = $_POST['numero'];
