@@ -1,0 +1,105 @@
+.modificacion form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.modificacion form label {
+    margin-bottom: 5px;
+}
+
+.modificacion form input[type="text"],
+.modificacion form input[type="number"],
+.modificacion form select {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.modificacion form textarea {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.modificacion form .btn-login {
+    width: 50%;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (min-width: 600px) {
+    .modificacion form {
+        width: 50%;
+    }
+}
+.agregarPokemon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+.agregarPokemon form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.agregarPokemon form label {
+    margin-bottom: 5px;
+}
+
+.agregarPokemon form input[type="text"],
+.agregarPokemon form input[type="number"],
+.agregarPokemon form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.agregarPokemon form textarea {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.agregarPokemon form .btn-login {
+    width: 50%;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (min-width: 600px) {
+    .agregarPokemon {
+        width: 50%;
+    }
+}
+
+label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input {
+    background-color: rgba(243, 226, 180, 0.84);
+}
+.button {
+    padding: 0.3125em 0.400em;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0.1875em;
+    cursor: pointer;
+    height: 2em;
+}
