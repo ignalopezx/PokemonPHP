@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de Pokémon</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+</head>
+
+<body>
+<section class="section-pokemon">
+    <div class="pokemon-container">
+        <h1 style="text-align: center; margin:20px;">Detalles del Pokémon</h1>
+        {{#pokemon}}
+            <div style="display:flex; align-items:center; justify-content:center; width:100%;">
+                <img class="pokemon-img" src="/public/image/{{imagen}}" alt="Imagen de {{nombre}}">
+            </div>
+            <div class="pokemon-info">
+                <p><strong>Número de Identificador:</strong> {{numero_identificador}}</p>
+                <p><strong>Nombre:</strong> {{nombre}}</p>
+                <p><strong>Tipo 1:</strong> {{tipo1}}</p>
+                <p><strong>Tipo 2:</strong> {{tipo2}}</p>
+                <p><strong>Descripción:</strong> {{descripcion}}</p>
+            </div>
+            <div style="text-align: center; margin-bottom: 2rem; margin-top:2.5rem;">
+                <a href="index.php" class="btn-back" style="text-decoration:none;">Volver</a>
+            </div>
+        {{/pokemon}}
+    </div>
+</section>
+</body>
+
+</html>
+
+
