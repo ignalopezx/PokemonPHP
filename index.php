@@ -1,29 +1,24 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokédex</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<?php
 
-    <?php
-        include("header.php");
-        include("search-bar.php");
-        echo "<td colspan='5' style='padding-bottom: 10px;'></td>";
-    ?>
-    <?php
-        include "mostrar_tablas.php";
-        mostrar_pokemons();
-        
-        if (isset($_GET['buscar'])) {
-            $pokemon_id = $_GET['buscar'];
-            header("Location: vistaPokemon.php?id=$pokemon_id");
-            exit();
-        }
-    ?>
-</body>
-</html>
+include_once ("Configuration.php");
+
+session_start();
+
+$router = Configuration::getRouter();
+
+if (!isset($_SESSION["usuario"]) OR $_SESSION["usuario"] != "admin") {
+    $url = $_SERVER['REQUEST_URI'];
+    if ($url == "/pokemons/add") {
+        header("Location: /pokemons");
+        exit();
+    }
+}
 
 
+$controller = isset($_GET["controller"]) ? $_GET["controller"] : "" ;
+$action = isset($_GET["action"]) ? $_GET["action"] : "" ;
+
+$router->route($controller, $action);
+
+//index.php?controller=tours&action=get
+//tours/get

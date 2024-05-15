@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+
+<div class="search-bar">
+    <form class="form-busqueda" action="/pokemons/search?buscar={{nombre}}" method="get">
+    <input type="text" name="buscar" placeholder="Buscar Pokémon">
+    <button type="submit">Buscar</button>
+    </form>
+</div>
+
+{{#no_encontrado}}
+    <p style='font-size: 35px; font-weight: bold; text-align: center;'>Pokémon no encontrado</p>
+{{/no_encontrado}}
+
+<td colspan='5' style='padding-bottom: 10px;'></td>
+<table style='width:100%;'>
+    <tr style='border-bottom: 20px solid white; border-top: 2px solid white;'>
+        <th class='espacio'>Imagen</th>
+        <th class='espacio'>Tipo 1</th>
+        <th class='espacio'>Tipo 2</th>
+        <th class='espacio numero-columna'>Número</th>
+        <th class='espacio'>Nombre</th>
+    </tr>
+        {{#pokemons}}
+            <tr>
+                <td class='espacio-top'><img src='/public/image/{{imagen}}' alt='{{nombre}}' width='100px' height='100px'></td>
+                <td class='espacio-top'><img src='/public/image/tipoPokemon/tipo_{{tipo1}}.png' alt='{{tipo1}}'></td>
+                {{#tipo2}}
+                    <td class='espacio-top'><img src='/public/image/tipoPokemon/tipo_{{tipo2}}.png' alt='{{tipo2}}'></td>
+                {{/tipo2}}
+                {{^tipo2}}
+                    <td></td>
+                {{/tipo2}}
+                <td class='espacio-top numero-columna'>{{numero_identificador}}</td>
+                <td class='espacio-top'>{{nombre}}</td>
+            </tr>
+            <tr class='ver-row'>
+                <td colspan='5' style='padding-bottom: 10px;'>
+                    <a class='ver-button' href='/pokemons/view?id={{id}}'>Ver</a>
+                    <a class='modificar-button' href='/pokemons/update?id={{id}}'>Modificar</a>
+                    <a class='eliminar-button' href='/pokemons/delete?id={{id}}'>Eliminar</a>
+                </td>
+            </tr>
+            <tr style='background-color: #fff; height:20px;'>
+                <td colspan='5' style='background-color: #fff;'></td>
+            </tr>
+        {{/pokemons}}
+        <tr class='ver-row' style='background-color: #fff;'>
+            <td colspan='5' style='padding-bottom: 10px;'>
+                <a class='ver-button' href='/pokemon/add'>Agregar Pokemon</a>
+            </td>
+        </tr>
+</table>
+</body>
+</html>
+
