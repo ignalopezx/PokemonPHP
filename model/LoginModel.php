@@ -14,11 +14,7 @@ class LoginModel
     {
         $result = $this->database->query("SELECT * FROM users WHERE usuario = '$usuario' AND contraseña = '$contraseña'");
 
-        if (count($result) > 0) {
-            return $result[0];
-        } else {
-            return null;
-        }
+        return $result;
     }
 
 

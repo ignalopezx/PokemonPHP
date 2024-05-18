@@ -25,7 +25,6 @@ class LoginController
                 header("Location: /pokemons");
                 exit();
             }
-
     }
 
 

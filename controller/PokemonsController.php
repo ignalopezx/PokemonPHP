@@ -16,22 +16,41 @@ class PokemonsController
     public function get()
     {
         $pokemons = $this->model->getPokemons();
-        $this->presenter->render("view/pokemonsView.mustache", ["pokemons" => $pokemons]);
+        $usuario = $_SESSION['usuario'] ?? null;
+
+        $this->presenter->render("view/pokemonsView.mustache", ["pokemons" => $pokemons, "usuario" => $usuario]);
+
+    }
+
+    public function error()
+    {
+        $pokemons = $this->model->getPokemons();
+        $usuario = $_SESSION['usuario'] ?? null;
+
+        $this->presenter->render("view/pokemonsView.mustache", ["pokemons" => $pokemons, "usuario" => $usuario, "error" => true]);
+
     }
 
 
     public function add()
     {
         $tipos = $this->model->getTipos();
-        $this->presenter->render("view/addPokemonsView.mustache", ["tipos" => $tipos]);
+        $usuario = $_SESSION['usuario'] ?? null;
+
+        $this->presenter->render("view/addPokemonsView.mustache", ["tipos" => $tipos, "usuario" => $usuario]);
+
     }
+
 
 
     public function view()
     {
         $id = $_GET["id"];
         $pokemon = $this->model->getPokemonById($id);
-        $this->presenter->render("view/verPokemonView.mustache", ["pokemon" => $pokemon]);
+        $usuario = $_SESSION['usuario'] ?? null;
+
+        $this->presenter->render("view/verPokemonView.mustache", ["pokemon" => $pokemon, "usuario" => $usuario]);
+
     }
 
 
@@ -46,15 +65,17 @@ class PokemonsController
 
     public function search()
     {
+        $usuario = $_SESSION['usuario'] ?? null;
+
         if(isset($_GET["buscar"])) {
             $nombre = $_GET["buscar"];
             if(!empty($nombre)) {
                 $pokemons = $this->model->getPokemonByName($nombre);
                 if($pokemons) {
-                    $this->presenter->render("view/pokemonsView.mustache", ["pokemons" => $pokemons]);
+                    $this->presenter->render("view/pokemonsView.mustache", ["pokemons" => $pokemons, "usuario"=> $usuario]);
                 } else {
                     $pokemons = $this->model->getPokemons();
-                    $this->presenter->render("view/pokemonsView.mustache", ["pokemons" => $pokemons, "no_encontrado" => true]);
+                    $this->presenter->render("view/pokemonsView.mustache", ["pokemons" => $pokemons, "no_encontrado" => true, "usuario"=> $usuario]);
                 }
             } else {
                 $this->get();
@@ -68,7 +89,10 @@ class PokemonsController
         $id = $_GET['id'];
         $pokemon = $this->model->getPokemonById($id);
         $tipos = $this->model->getTipos();
-        $this->presenter->render("view/modifyPokemonsView.mustache", ["pokemon"=>$pokemon,"tipos" => $tipos]);
+        $usuario = $_SESSION['usuario'] ?? null;
+
+        $this->presenter->render("view/modifyPokemonsView.mustache", ["pokemon"=>$pokemon,"tipos" => $tipos, "usuario"=> $usuario]);
+
     }
 
     public function procesarModificacion()
