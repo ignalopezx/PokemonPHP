@@ -65,7 +65,7 @@ INSERT INTO pokemon (numero_identificador, imagen, nombre, tipo1, tipo2, descrip
 (50, 'pokemons/Cloyster.png', 'Cloyster', 'Agua', 'Hielo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
 
 CREATE TABLE IF NOT EXISTS users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    codigo INT AUTO_INCREMENT PRIMARY KEY,
     numero_identificador INT UNIQUE NOT NULL,
     usuario VARCHAR(30) NOT NULL,
     contraseña VARCHAR(30) NOT NULL
